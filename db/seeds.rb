@@ -1,0 +1,5 @@
+NewsItem.create(title: 'First news')
+NewsItem.create(title: 'Second news')
+NewsItem.create(title: 'Hot news')
+NewsItem.create(title: 'Old news')
+NewsItem.create(title: 'Sensation!')

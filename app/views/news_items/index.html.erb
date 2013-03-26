@@ -1,0 +1,7 @@
+<h1>News</h1>
+
+<% @news.each do |n| %>
+  <p>
+    <%= link_to n.title, "/n/#{n.url_key}" %>
+  </p>
+<% end %>
