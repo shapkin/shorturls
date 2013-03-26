@@ -1,7 +1,5 @@
 class NewsItem < ActiveRecord::Base
-  before_validation(:on => :create) do
-    self.url_key = generate_url_key
-  end
+  before_validation :generate_url_key, on: :create
 
   attr_accessible :title
 
@@ -15,7 +13,7 @@ class NewsItem < ActiveRecord::Base
       if NewsItem.find_by_url_key(key)
         generate_url_key
       else
-        key
+        self.url_key = key
       end
     end
 end
