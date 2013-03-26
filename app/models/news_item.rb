@@ -2,7 +2,10 @@ class NewsItem < ActiveRecord::Base
 
   before_create :generate_url_key
 
-  attr_accessible :title, :url_key
+  attr_accessible :title
+
+  validates_presence_of :title
+  validates_uniqueness_of :url_key
 
   private
 
