@@ -1,10 +1,10 @@
 class NewsItem < ActiveRecord::Base
-  before_validation :generate_url_key, on: :create
-
   attr_accessible :title
 
-  validates_presence_of :title, :url_key
-  validates_uniqueness_of :url_key
+  validates :title, presence: true
+  validates :url_key, presence: true, uniqueness: true
+
+  before_validation :generate_url_key, on: :create
 
   private
 
