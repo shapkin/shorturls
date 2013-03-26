@@ -11,9 +11,9 @@ test:
   password: "1234"
 
 production:
-  host: ""
+  host: "ec2-23-23-237-0.compute-1.amazonaws.com"
   adapter: postgresql
-  database: ""
-  username: ""
-  password: ""
+  database: "d6pgdph55ktg7p"
+  username: "afrfqcjxgjqqbp"
+  password: "pNJ_iiWZFPVpxu7YWwFKVZjlXG"
   port: 5432
