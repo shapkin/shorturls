@@ -1,10 +1,11 @@
 class NewsItem < ActiveRecord::Base
-
-  before_create :generate_url_key
+  before_validation(:on => :create) do
+    self.url_key = generate_url_key
+  end
 
   attr_accessible :title
 
-  validates_presence_of :title
+  validates_presence_of :title, :url_key
   validates_uniqueness_of :url_key
 
   private
@@ -14,7 +15,7 @@ class NewsItem < ActiveRecord::Base
       if NewsItem.find_by_url_key(key)
         generate_url_key
       else
-        self.url_key = key
+        key
       end
     end
 end
