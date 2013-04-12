@@ -3,6 +3,6 @@
 <% @news.each do |n| %>
   <p>
     <%= link_to n.title, news_path(n) %>
-    [<%= link_to 'short', short_news_url_path(n.url_key) %>]
+    [<%= link_to 'short', short_news_url_path(bijective_encode(n.id)) %>]
   </p>
 <% end %>

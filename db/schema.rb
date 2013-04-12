@@ -11,15 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326113845) do
+ActiveRecord::Schema.define(:version => 20130412061404) do
 
   create_table "news_items", :force => true do |t|
     t.string   "title",      :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "url_key",    :null => false
   end
-
-  add_index "news_items", ["url_key"], :name => "index_news_items_on_url_key", :unique => true
 
 end

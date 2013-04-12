@@ -1,4 +1,6 @@
 class NewsItemsController < ApplicationController
+  include NewsItemsHelper
+  
   def index
     @news = NewsItem.all
   end
@@ -8,7 +10,8 @@ class NewsItemsController < ApplicationController
   end
 
   def find
-    item = NewsItem.find_by_url_key(params[:key])
+    id = bijective_decode(params[:key])
+    item = NewsItem.find_by_id(id)
     if item
       redirect_to news_path(item), status: 301
     else
